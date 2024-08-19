@@ -3,10 +3,9 @@ require "socket"
 module TwitchIRC
   struct Client
     @ip_addr : String
-    @port : String
-    @ssl : Bool | Nil
+    @port : Int32
     @client : TCPSocket
-    def initialize(@ip_addr, @port, @ssl)
+    def initialize(@ip_addr, @port)
       @client = TCPSocket.new(@ip_addr, @port)
     end
 
